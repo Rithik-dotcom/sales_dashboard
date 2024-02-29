@@ -3,11 +3,59 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Data from './component/Data';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Dashboard from './component/dashboard/Dashboard';
+import Orders from './component/orders/Orders';
+import Products from './component/products/Products';
+import Customers from './component/customers/Customers';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <React.StrictMode>
-    <App />
+    <Data>
+      <App />
+    </Data>
+    <BrowserRouter>
+      <Routes>
+
+        {/* <Route
+          path="/"
+          element={
+            <Data>
+              <App />
+            </Data>
+          } /> */}
+
+        <Route
+          path="/dashboard"
+          element={
+            <Dashboard />
+          } />
+
+        <Route
+          path="/orders"
+          element={
+            <Orders />
+          } />
+
+        <Route
+          path="/products"
+          element={
+            <Products />
+          } />
+
+
+        <Route
+          path="/customers"
+          element={
+            <Customers />
+          } />
+
+      </Routes>
+
+    </BrowserRouter>
   </React.StrictMode>
 );
 
