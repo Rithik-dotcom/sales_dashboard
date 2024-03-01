@@ -6,8 +6,6 @@ import { MyNumber } from "./component/Data";
 
 function App() {
 
-
-
   return (
     <div className="App">
       <header>
@@ -103,15 +101,11 @@ function App() {
 
             <div className="text-end">
               <button type="button" className="btn btn-light text-dark me-2">Login</button>
-              <button type="button" className="btn btn-primary">Sign-up</button>
+               <button onClick={()=> window.location.href='/signup' } type="button" className="btn btn-primary">Sign-up</button> 
             </div>
           </div>
         </div>
       </header>
-
-
-
-
     </div>
   );
 }

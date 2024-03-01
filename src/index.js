@@ -9,11 +9,13 @@ import Dashboard from './component/dashboard/Dashboard';
 import Orders from './component/orders/Orders';
 import Products from './component/products/Products';
 import Customers from './component/customers/Customers';
+import Login from './loginComponent/login/Login';
+import SignUp from './loginComponent/signUp/SignUp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
-  <React.StrictMode>
+  <div>
     <Data>
       <App />
     </Data>
@@ -53,10 +55,23 @@ root.render(
             <Customers />
           } />
 
+        <Route
+          path="/signup"
+          element={
+            <SignUp />
+          } />
+
+
+        <Route
+          path="/login"
+          element={
+            <Login />
+          } />
+
       </Routes>
 
     </BrowserRouter>
-  </React.StrictMode>
+    </div>
 );
 
 // If you want to start measuring performance in your app, pass a function
