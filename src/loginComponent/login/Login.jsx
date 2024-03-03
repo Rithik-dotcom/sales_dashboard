@@ -2,7 +2,8 @@ import React from 'react'
 import { createUserDocumentFromAuth, signInWithGooglePopup } from '../../utils/Utils'
 
 const Login = () => {
-const signInWithGoogle = async ()=>{
+
+  const signInWithGoogle = async ()=>{
   const {user} = await signInWithGooglePopup();
   await createUserDocumentFromAuth(user);
 }

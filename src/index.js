@@ -14,67 +14,25 @@ import SignUp from './loginComponent/signUp/SignUp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
-  <div>
-    <Data>
+  
+    <div>
+     
+      <Data>
       <App />
-    </Data>
-    <BrowserRouter>
+      </Data>
+      <BrowserRouter>
       <Routes>
-
-        {/* <Route
-          path="/"
-          element={
-            <Data>
-              <App />
-            </Data>
-          } /> */}
-
-        <Route
-          path="/dashboard"
-          element={
-            <Dashboard />
-          } />
-
-        <Route
-          path="/orders"
-          element={
-            <Orders />
-          } />
-
-        <Route
-          path="/products"
-          element={
-            <Products />
-          } />
-
-
-        <Route
-          path="/customers"
-          element={
-            <Customers />
-          } />
-
-        <Route
-          path="/signup"
-          element={
-            <SignUp />
-          } />
-
-
-        <Route
-          path="/login"
-          element={
-            <Login />
-          } />
-
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/orders" element={<Orders />} />
+        <Route path="/products" element={<Products />} />
+        <Route path="/customers" element={<Customers />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
-
-    </BrowserRouter>
+      </BrowserRouter>
     </div>
+ 
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
