@@ -39,3 +39,8 @@
 .orderBtn{
   --bs-btn-padding-x: -0.25rem !important;
 }
+
+.nav-link {
+  padding: 10px 15px;
+  cursor: pointer;
+}

@@ -3,7 +3,9 @@ import {
     getAuth,
     signInWithRedirect,
     signInWithPopup,
-    GoogleAuthProvider
+    GoogleAuthProvider,
+    signOut,
+    onAuthStateChanged
 } from 'firebase/auth';
 
 
@@ -82,3 +84,10 @@ export const createUserDocumentFromAuth = async (userAuth) => {
 }
 
 
+//signout method from firebase
+
+export const signOutUser = async ()=>  await signOut(auth);
+
+//observer
+
+export const onAuthStateChangedListener = (callback)=>{onAuthStateChanged(auth, callback)};

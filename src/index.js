@@ -11,16 +11,16 @@ import Products from './component/products/Products';
 import Customers from './component/customers/Customers';
 import Login from './loginComponent/login/Login';
 import SignUp from './loginComponent/signUp/SignUp';
-
+import {UserProvider} from '../src/context/userContext/userContext'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
     <div>
      
-      <Data>
-      <App />
-      </Data>
+      
       <BrowserRouter>
+      <UserProvider>
+        <App/>
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
@@ -30,6 +30,7 @@ root.render(
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      </UserProvider>
       </BrowserRouter>
     </div>
  
