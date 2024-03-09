@@ -4,7 +4,6 @@ import { createUserDocumentFromAuth, onAuthStateChangedListener, signOutUser } f
 export const UserContext = createContext({
     setCurrentUser: () => null,
     currentUser: null,
-
 });
 
 export const UserProvider = ({ children }) => {

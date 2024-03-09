@@ -12,6 +12,8 @@ import Customers from './component/customers/Customers';
 import Login from './loginComponent/login/Login';
 import SignUp from './loginComponent/signUp/SignUp';
 import {UserProvider} from '../src/context/userContext/userContext'
+import ShopPage from './pages/ShopPage';
+import { ProductProvider } from './context/productContext/ProductContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
@@ -20,16 +22,18 @@ root.render(
       
       <BrowserRouter>
       <UserProvider>
+        <ProductProvider>
         <App/>
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/orders" element={<Orders />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/products" element={<ShopPage/>} />
         <Route path="/customers" element={<Customers />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<Login />} />
       </Routes>
+      </ProductProvider>
       </UserProvider>
       </BrowserRouter>
     </div>
