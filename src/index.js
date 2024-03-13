@@ -11,8 +11,8 @@ import SignUp from './loginComponent/signUp/SignUp';
 import { UserProvider } from '../src/context/userContext/userContext'
 import ShopPage from './pages/ShopPage';
 import { ProductProvider } from './context/productContext/ProductContext';
-import { ToggleProvider } from './context/ToggleContext/ToggleContext';
 import Navbar from './component/navbar/Navbar';
+import { CartProvider } from './context/CartContext/Cartcontext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
@@ -22,7 +22,7 @@ root.render(
     <BrowserRouter>
       <UserProvider>
         <ProductProvider>
-          <ToggleProvider>
+         <CartProvider>
             <Navbar />
             <Routes>
               <Route path="/" element={<Dashboard />} />
@@ -33,7 +33,7 @@ root.render(
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
             </Routes>
-          </ToggleProvider>
+            </CartProvider>
         </ProductProvider>
       </UserProvider>
     </BrowserRouter>
