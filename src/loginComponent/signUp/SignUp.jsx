@@ -1,5 +1,5 @@
 import React from 'react'
-import { signInWithGooglePopup, createUserDocumentFromAuth } from '../../utils/Utils';
+import { signInWithGooglePopup, createUserDocumentFromAuth } from '../../FireBase_utils/Utils';
 
 const SignUp = () => {
 

@@ -13,30 +13,37 @@ import ShopPage from './pages/ShopPage';
 import { ProductProvider } from './context/productContext/ProductContext';
 import Navbar from './component/navbar/Navbar';
 import { CartProvider } from './context/CartContext/Cartcontext';
+import Checkout from './component/checkout/Checkout';
+import Home from './pages/Home';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <div>
 
 
-    <BrowserRouter>
+   
       <UserProvider>
         <ProductProvider>
          <CartProvider>
-            <Navbar />
+         <BrowserRouter>
+         <Navbar />
             <Routes>
-              <Route path="/" element={<Dashboard />} />
+         
+              <Route path="/" element={<Navbar />} />
+              <Route index element={<Home />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/orders" element={<Orders />} />
               <Route path="/products" element={<ShopPage />} />
               <Route path="/customers" element={<Customers />} />
               <Route path="/signup" element={<SignUp />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/checkout" element={<Checkout/>} />
             </Routes>
+            </BrowserRouter>
             </CartProvider>
         </ProductProvider>
       </UserProvider>
-    </BrowserRouter>
+
   </div>
 
 );

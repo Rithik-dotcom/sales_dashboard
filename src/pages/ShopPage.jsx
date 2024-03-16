@@ -9,7 +9,7 @@ const ShopPage = () => {
     return (
         <div className='container text-center '>
            <div className='row'> {product.map(( product ) => {
-                console.log(product)
+               
                 return (
                     <ProductCard  key={product.id} product={product}  />
                     )

@@ -7,8 +7,8 @@ function App() {
 
 
   return (
-    <div className="App">
-     <Navbar />
+    <div className="App text-white">
+    I am app
     </div>
   );
 }
