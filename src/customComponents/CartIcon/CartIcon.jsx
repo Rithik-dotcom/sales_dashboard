@@ -3,7 +3,7 @@ import { Cartcontext } from '../../context/CartContext/Cartcontext';
 
 
 const CartIcon = () => {
-
+    const {cartCount, setCartCount} = useContext(Cartcontext)
     const {isCartOpen, setIsCartOpen } = useContext(Cartcontext)
 
     function toggleCartIn(){
@@ -20,8 +20,8 @@ const CartIcon = () => {
                     </svg>
                     Orders
                     <span className="badge  position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        99+
-                        <span class="visually-hidden">unread messages</span>
+                        {cartCount}
+                        <span className="visually-hidden">unread messages</span>
                     </span>
                 </a>
             </li>

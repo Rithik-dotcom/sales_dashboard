@@ -13,7 +13,11 @@ import {
     getFirestore,  // instance to get firestore
     doc,  // get data base 
     getDoc,  // getting the data from database
-    setDoc  // setting the data to firestore
+    setDoc,  // setting the data to firestore
+    collection,
+    writeBatch,
+    getDocs,
+    query
 } from 'firebase/firestore';
 
 
@@ -48,7 +52,37 @@ export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
 
 // get the firestore db instance into a variable
 export const db = getFirestore();
+//=>Add the collection and data in firestore, collection key is the first name in dataBase
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
+    const collectionRef = collection(db, collectionKey);
+    const batch = writeBatch(db);
 
+    objectsToAdd.forEach((object) => {
+        const docRef = doc(collectionRef, object.title.toLowerCase());
+        batch.set(docRef, object);
+    })
+
+    await batch.commit();
+    console.log("done")
+}
+
+
+//GETTING DATA FROM Firebase:
+export const getCategoriesAndDocuments = async () => {
+    const collectionRef = collection(db, "categories");
+
+    const q = query(collectionRef);
+
+    const querySnapShot = await getDocs(q);
+    const categoryMap = querySnapShot.docs.reduce((acc, docSnapShot) => {
+        const { title, items } = docSnapShot.data();
+        acc[title.toLowerCase()] = items;
+        return acc;
+    }, {})
+
+    return categoryMap;
+    
+}
 
 //creating a document in db using auth uid async function and getting data as snapshot
 export const createUserDocumentFromAuth = async (userAuth) => {
@@ -86,8 +120,18 @@ export const createUserDocumentFromAuth = async (userAuth) => {
 
 //signout method from firebase
 
-export const signOutUser = async ()=>  await signOut(auth);
+export const signOutUser = async () => await signOut(auth);
 
 //observer
 
-export const onAuthStateChangedListener = (callback)=>{onAuthStateChanged(auth, callback)};
+export const onAuthStateChangedListener = (callback) => { onAuthStateChanged(auth, callback) };
+
+
+
+
+
+
+
+
+
+
