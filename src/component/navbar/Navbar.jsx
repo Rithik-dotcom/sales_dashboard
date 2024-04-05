@@ -62,7 +62,7 @@ const Navbar = (prop) => {
                                 </li>
 
                                 <CartIcon />
-                              {isCartOpen && <CartDropdown/>}
+                                {isCartOpen && <CartDropdown />}
                                 <li>
                                     <a href="/products" className="nav-link text-white">
                                         {/* <svg className="bi d-block mx-auto mb-1" width="24" height="24"><use href="#grid"></use></svg> */}
@@ -89,24 +89,28 @@ const Navbar = (prop) => {
                 <div className="px-3 py-2 border-bottom mb-3">
                     <div className="container d-flex flex-wrap justify-content-center">
                         <form className="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto" role="search">
-                            <input type="search" className="form-control" placeholder="Search..." aria-label="Search" />
+                            <input type="search " className="form-control text-bg-secondary" placeholder="Search Products" aria-label="Search" />
                         </form>
 
                         <div className="text-end">
                             {currentUser ? (<button
                                 type="button"
                                 onClick={signOutHandler}
-                                className="btn btn-light text-dark me-2"
-                            >Login-Out
+                                className="btn  text-white me-2 btn-danger"
+                            >Log-Out
                             </button>)
                                 : (<button
                                     type="button"
                                     onClick={() => { window.location.href = '/login' }}
-                                    className="btn btn-light text-dark me-2"
-                                >Login
+                                    className="btn  text-white me-2 btn-danger"
+                                >Please-Log
                                 </button>)
                             }
-                            <button onClick={() => window.location.href = '/signup'} type="button" className="btn btn-primary">Sign-up</button>
+                            {/* <button onClick={() => window.location.href = '/signup'} type="button" className="btn btn-primary">Sign-up</button> */}
+                            <a href="/signup" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="5vb" height="2vh" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
+                                <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1" />
+                                <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117M11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5M4 1.934V15h6V1.077z" />
+                            </svg>Account </a>
                         </div>
                     </div>
                 </div>

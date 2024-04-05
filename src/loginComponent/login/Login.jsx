@@ -23,7 +23,7 @@ const Login = () => {
       <section class="container py-lg-8 py-5 background-design" data-cue="fadeIn" data-show="true" style={{ animationName: "fadeIn", animationDuration: "600ms", animationTimingFunction: "ease", animationDelay: "0ms", animationDirection: "normal", animationFillMode: "both" }}>
         <div class="row justify-content-center">
           <div class="col-xl-8 col-lg-10 col-12" data-cues="zoomIn" data-group="page-title" data-delay="700" data-disabled="true">
-            <div class="text-center d-flex flex-column gap-5" data-cue="zoomIn" data-group="page-title" data-delay="700" data-show="true" style={{ animationName: "zoomIn", animationDuration: "600ms", animationTimingFunction: "ease", animationDelay: "700ms", animationDirection: "normal", animationFillMode: "both" }}>
+            <div class="text-center d-flex flex-column gap-5 buttonDiv" data-cue="zoomIn" data-group="page-title" data-delay="700" data-show="true" style={{ animationName: "zoomIn", animationDuration: "600ms", animationTimingFunction: "ease", animationDelay: "700ms", animationDirection: "normal", animationFillMode: "both" }}>
               {/* <div class="d-flex justify-content-center">
                 <span class="bg-primary bg-opacity-10 text-primary border-primary border p-2 fs-6 rounded-pill lh-1 d-flex align-items-center">
                   <span>Login</span>
@@ -36,7 +36,7 @@ const Login = () => {
                 </svg>
                 <h1 class="mb-0 display-5 text-danger">Kickstart with your Google Account</h1>
               </div>
-              <div class="d-flex flex-row gap-2 justify-content-center">
+              <div class="d-flex flex-row gap-2 justify-content-center ">
                 <a  onClick={signInWithGoogle} class="btn btn-danger" target="_blank">
                   Login</a>
                 <a href="#demo" class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" width="5vb" height="2vh" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">

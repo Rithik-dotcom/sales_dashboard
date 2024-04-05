@@ -16,6 +16,8 @@ import { CartProvider } from './context/CartContext/Cartcontext';
 // import Checkout from './component/checkout/Checkout';
 // import Home from './pages/Home';
 import App from './App';
+import { Elements } from '@stripe/react-stripe-js';
+import { stripePromise } from './FireBase_utils/stripe/Stripe.utils';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -29,7 +31,9 @@ root.render(
       <CategoriesProvider>
         <CartProvider >
           <BrowserRouter>
+          <Elements stripe={stripePromise}>
             <App/>
+            </Elements>
           </BrowserRouter>
         </CartProvider>
       </CategoriesProvider>
